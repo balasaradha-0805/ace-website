@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: regular;
+
+    background: #0e2066; /* Background color for all pages */
+    background: radial-gradient(
+    circle at 48.7% 44.3%,
+    rgb(30, 144, 231) 0%,
+    rgb(56, 113, 209) 22.9%,
+    rgb(38, 76, 140) 76.7%,
+    rgb(31, 63, 116) 100.2%
+);
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Full page container */
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+#page1 {
+    position: relative;
+    background: transparent;
+}
+
+#page2, #page3 {
+    background: #0e2066;
+}
+
+/* Heading styles */
+.heading, .section-heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: bold;
+    font-size: 5rem;
+    
+    text-align: center;
+    font-family: 'Poppins';
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+.typing-container {
+    background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff; /* White font color */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect on hover */
+    position: relative; /* Position cursor correctly */
+}
+
+.typing-container:hover {
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.typing-text {
+    display: inline-block;
+    word-wrap: break-word;
+    transition: color 0.5s ease-in-out; /* Smooth color transition */
+}
+
+.typing-text::after {
+    content: '|';
+    font-size: inherit;
+    color: inherit;
+    animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px; /* Adjust margin for spacing */
+}
+/* Trans-box styles */
+.trans-box {
+    
+   
+    padding: 40px;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.1); /* White background */
+    color: white; /* Dark blue text color */
+    padding: 7rem;
+    font-family: 'Poppins';
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    opacity: 1; /* Full opacity */
+    max-width: 800px; /* Max width for better readability */
+    text-align: justify; /* Justify text for better appearance */
+}
+
+
+/* Bubble Animation */
+@keyframes move {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+.background-animate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-animate div {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 255, 0.3); /* Default to a vibrant blue with low opacity */
+    animation: move 10s linear infinite;
+    animation-delay: 0s;
+}
+
+/* Define 10 vibrant shades of blue with low opacity */
+.background-animate div:nth-child(1) { width: 30px; height: 30px; background: rgba(0, 191, 255, 0.3); /* Deep Sky Blue */ }
+.background-animate div:nth-child(2) { width: 40px; height: 40px; background: rgba(30, 144, 255, 0.3); /* Dodger Blue */ }
+.background-animate div:nth-child(3) { width: 50px; height: 50px; background: rgba(0, 149, 255, 0.3); /* Vivid Blue */ }
+.background-animate div:nth-child(4) { width: 60px; height: 60px; background: rgba(70, 130, 180, 0.3); /* Steel Blue */ }
+.background-animate div:nth-child(5) { width: 70px; height: 70px; background: rgba(135, 206, 250, 0.3); /* Light Sky Blue */ }
+.background-animate div:nth-child(6) { width: 80px; height: 80px; background: rgba(100, 149, 237, 0.3); /* Cornflower Blue */ }
+.background-animate div:nth-child(7) { width: 40px; height: 40px; background: rgba(65, 105, 225, 0.3); /* Royal Blue */ }
+.background-animate div:nth-child(8) { width: 50px; height: 50px; background: rgba(0, 0, 255, 0.3); /* Blue */ }
+.background-animate div:nth-child(9) { width: 60px; height: 60px; background: rgba(0, 191, 255, 0.3); /* Deep Sky Blue */ }
+.background-animate div:nth-child(10) { width: 70px; height: 70px; background: rgba(30, 144, 255, 0.3); /* Dodger Blue */ }
+
+/* Position bubbles randomly within the bottom of the viewport */
+.background-animate div:nth-child(1) { bottom: 0; left: 10%; animation-duration: 12s; }
+.background-animate div:nth-child(2) { bottom: 0; left: 20%; animation-duration: 14s; }
+.background-animate div:nth-child(3) { bottom: 0; left: 30%; animation-duration: 16s; }
+.background-animate div:nth-child(4) { bottom: 0; left: 40%; animation-duration: 18s; }
+.background-animate div:nth-child(5) { bottom: 0; left: 50%; animation-duration: 20s; }
+.background-animate div:nth-child(6) { bottom: 0; left: 60%; animation-duration: 22s; }
+.background-animate div:nth-child(7) { bottom: 0; left: 70%; animation-duration: 24s; }
+.background-animate div:nth-child(8) { bottom: 0; left: 80%; animation-duration: 26s; }
+.background-animate div:nth-child(9) { bottom: 0; left: 85%; animation-duration: 28s; }
+.background-animate div:nth-child(10) { bottom: 0; left: 90%; animation-duration: 30s; }
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .heading, .section-heading {
+        font-size: 1.75rem;
+    }
+
+    .trans-box {
+        font-size: 1rem;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading, .section-heading {
+        font-size: 1.5rem;
+    }
+
+    .trans-box {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
